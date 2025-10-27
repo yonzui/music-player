@@ -11,6 +11,7 @@ const musicDuration = document.querySelector('.song-duration');
 const playBtn = document.querySelector('.play-btn');
 const forwardBtn = document.querySelector('.forward-btn');
 const backwardBtn = document.querySelector('.backward-btn');
+const backgroundChange = document.querySelector('.backImg');
 
 playBtn.addEventListener('click', () => {
     if(playBtn.className.includes('pause')){
@@ -32,7 +33,9 @@ const setMusic = (i) => {
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
-    disk.style.backgroundImage = `url('${song.cover}')`;  
+    disk.style.backgroundImage = `url('${song.cover}')`; 
+    backgroundChange.style.backgroundImage = `url('${song.cover}')`;  
+ 
 
     currentTime.innerHTML = '00:00';
     setTimeout(() => {
