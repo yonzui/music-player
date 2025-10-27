@@ -10,11 +10,12 @@ let songs = [
         path: 'music/romeo.mp3',
         artist: 'pinkpantheress',
         cover: 'images/fancythat-cover.jpg'
+        
     },
     {
-        name: 'snap my finger (ft. pinkpantheress)',
+        name: 'snap my finger',
         path: 'music/snapmyfinger.mp3',
-        artist: 'kaytranada',
+        artist: 'kaytranada (ft. pinkpantheress)',
         cover: 'images/kaytranada-cover.jpg'
     },
     {
@@ -36,15 +37,15 @@ let songs = [
         cover: 'images/souledout-cover.jpg'
     },
     {
-        name: 'stay (ft. dana williams)',
+        name: 'stay',
         path: 'music/stay.mp3',
-        artist: 'the aston shuffle, fabich',
+        artist: 'the aston shuffle, fabich (ft. dana williams)',
         cover: 'images/stay-cover.jpg'
     },
     {
-        name: 'club classics (ft. bb trickz)',
+        name: 'club classics',
         path: 'music/clubclassics.mp3',
-        artist: 'charli xcx',
+        artist: 'charli xcx (ft. bb trickz)',
         cover: 'images/brat-cover.jpg'
     },
     {
@@ -66,9 +67,15 @@ let songs = [
         cover: 'images/ditto-cover.jpg'
     },
     {
-        name: 'notice (ft. toriena)',
+        name: 'notice',
         path: 'music/notice.mp3',
-        artist: 'moe shop',
+        artist: 'moe shop (ft. toriena)',
         cover: 'images/notice-cover.jpg'
+    },
+    {
+        name: `don't`,
+        path: 'music/Don_t.mp3',
+        artist: 'azumi takahashi, lotus juice, ATLUS',
+        cover: 'images/dont-cover.jpg'
     }
 ]
