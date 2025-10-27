@@ -14,7 +14,7 @@ body {
 }
 
 .music-player {
-    width: 350px;
+    width: 600px;
     height: 550px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.08);
@@ -22,12 +22,34 @@ body {
     padding: 30px;
     overflow: hidden;
     color: papayawhip;
+
 }
+
+
+.music-player {
+  /* transform: perspective(800px) rotateY(200deg) scale(3) rotateX(10deg); */
+  filter: blur(10px);
+  opacity: 0.5;
+  transition: 1.3s ease all;
+}
+
+    .music-player:hover {
+        transform:
+        perspective(1500px)
+        rotateY(15deg)
+        translateY(-20px)
+        rotateX(7deg)
+        scale(1);
+        filter: blur(0);
+        opacity: 1;
+        box-shadow: 0 10px 50px rgb(255, 190, 212);
+        border: 1px dashed;
+    }
 
 .music-name,
 .artist-name {
     text-align: center;
-    text-transform: capitalize;
+    text-transform: lowercase;
 }
 
 .music-name {
@@ -51,6 +73,12 @@ body {
     background-image: url('images/fancythat-cover.jpg');
     background-size: cover;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
+    animation: rotate 120s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk.play {
+    animation-play-state: running;
 }
 
 .disk::before {
@@ -100,5 +128,90 @@ body {
 .controls {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+    margin-top: 20px;
+}
+
+.play-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: papayawhip;
+    cursor: pointer;
+    border: none;
+}
+
+.play-btn span {
+    position: absolute;
+    top:50%;
+    left: 27%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: blue;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2) {
+    left: 57%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    background: papayawhip;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(360deg);
+    }
 }
